@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>div-test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="src/button.css">
+        <link rel="stylesheet" href="src/body.css">
+
+    </head>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        #button-div{
+            width: 100%;
+            min-height: 30px;
+            background-color: aquamarine;
+            margin-bottom: 5px;
+            padding-left: 2%;
+            padding-right: 2%;
+            border-left: 100px solid limegreen;
+            border-right: 100px solid limegreen;
+            line-height: 30px;
+
+        }
+        #head-div{
+            width: 100%;
+            min-height: 50px;
+            background-color: lightgray;
+            padding-left: 2%;
+            padding-right: 2%;
+            line-height: 50px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        #input-div{
+            width: 100%;
+            min-height: 400px;
+            background-color: gray;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+align-items: center;
+
+        }
+        #input-r1-div{
+            width: 24%;
+            min-height: 400px;
+            background-color: lightpink;
+            /* float: left; */
+        }
+        #input-r2-div{
+            width: 24%;
+            min-height: 400px;
+            background-color: lightpink;
+            /* float: mid; */
+        }
+        #input-r3-div{
+            width: 24%;
+            min-height: 400px;
+            background-color: lightpink;
+            /* float: right; */
+        }
+        #input-r4-div{
+            width: 24%;
+            min-height: 400px;
+            background-color: lightpink;
+            /* float: right; */
+        }
+        
+    </style>
+    <body>
+        <div id="button-div">
+            <button onclick="Home()">Home</button>
+            <button onclick="AddItem()">New Product Entry</button>
+            <button onclick="find()">Find Item</button> 
+            <button onclick="report()">Report</button>
+        </div>
+        <div id="head-div">
+            <h1>User Information Form</h1>
+        </div>
+
+        <div id="input-div">
+            <div id="input-r1-div">
+
+            </div>
+            <div id="input-r2-div">
+
+            </div>
+            <div id="input-r3-div">
+
+            </div>
+            <div id="input-r4-div">
+
+            </div>
+
+        </div>
+       
+    </body>
+</html>

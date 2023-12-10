@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1e2e ;
+}
+.container{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.container a{
+    position: relative;
+    width: 120px;
+    height: 40px;
+    display: inline-block;
+    margin: 20px;
+}
+.container a::before,
+.container a::after{
+content: '';
+position: absolute;
+inset: 0;
+background: #ff0000;
+transition: 0.5s;
+}
+.container a span{
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #1a1e2e;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: antiquewhite;
+    border: 1px solid#040a29;
+}
+.container a:hover::before{
+    inset: -3px;
+}
+.container a:hover::after{
+    inset: -3px;
+    filter: blur(10px);
+}
+.container a:nth-child(1)::before,
+.container a:nth-child(1)::after{
+    background: linear-gradient(45deg, #1aff22, #1a1e2e, #ff075b);
+}
+.container a:nth-child(2)::before,
+.container a:nth-child(2)::after{
+    background: linear-gradient(45deg, #ece630, #1a1e2e, #1191e0);
+}
+.container a:nth-child(3)::before,
+.container a:nth-child(3)::after{
+    background: linear-gradient(45deg, #ff1afb, #1a1e2e, #d26a0e);
+}
+.container a span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255, 255,0.07);
+    transform: skew(25deg);
+
+}

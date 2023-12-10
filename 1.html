@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Entry and Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: left;
+            align-items: flex-start;
+        }
+
+        .form-container {
+            margin-right: 20px;
+        }
+
+        .preview-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .preview-data {
+            font-size: 14px;
+        }
+        td {
+            width: 100px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+    <div class="container">
+        <div class="form-container">
+            <h1>Data Entry Form</h1>
+            <form id="dataForm">
+                
+                    <tr>                               
+                        <td><label for="name">User Name:</label></td>
+                        <td><input type="text" id="name" name="name" required><br></td>
+                    </tr> 
+                     
+                    <tr>
+                    <td>Device Type:</td>
+                    <td><label> <input type="radio" name="device" value="0" required> Desktop </label>
+                        <label> <input type="radio" name="device" value="1" required> Laptop </label> </td>
+                
+                    </tr>
+                    <tr>
+                        <td><label for="pcModel">PC Model:</label></td>
+                        <td><input type="text" id="pcModel" name="pcModel" required><br></td>
+                    </tr>
+                
+                    <tr>
+                        <td><label for="serialNo">Serial No:</label></td>
+                        <td><input type="text" id="serialNo" name="serialNo" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ram">RAM:</label></td>
+                        <td><input type="text" id="ram2" name="ram" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ssd">SSD:</label></td>
+                        <td><input type="text" id="ssd" name="ssd" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hdd">HDD:</label></td>
+                        <td><input type="text" id="hdd" name="hdd" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ip">IP:</label></td>
+                        <td><input type="text" id="ip" name="ip" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="internetAccess">Internet Access:</label></td>
+                        <td><input type="text" id="internetAccess" name="internetAccess" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="pcName">PC Name:</label></td>
+                        <td><input type="text" id="pcName" name="pcName" required><br></td>
+                    </tr> 
+                    <tr>
+                        <td><label for="domainName">Domain Name:</label></td>
+                        <td><input type="text" id="domainName" name="domainName" required><br></td>
+                    </tr>                   
+                    <tr>
+                        <td><label for="mailid">Mail ID:</label></td>
+                        <td><input type="text" id="mail" name="mailID" required><br></td>
+                    </tr>  
+                    <tr>
+                        <td><label for="telephone">IP Telephone:</label></td>
+                        <td><input type="text" id="telephone" name="telephone" required><br></td>
+                    </tr>           
+                    <tr>
+                        <td><label for="keyboard">Keyboard (KB):</label></td>
+                        <td><input type="text" id="keyboard" name="keyboard1" required><br></td>
+                    </tr>   
+                    <tr>
+                        <td><label for="mouse">Mouse (MS):</label></td>
+                        <td> <input type="text" id="mouse" name="mouse" required><br></td>
+                    </tr>                 
+                     <tr>
+                        <td><label for="monitor">Monitor:</label></td>
+                        <td> <input type="text" id="monitor" name="monitor" required><br></td>
+                     </tr>      
+                    <tr>
+                        <td> <label for="ups">UPS:</label></td>
+                        <td><input type="text" id="ups" name="ups" required><br></td>
+                    </tr>       
+                    <tr>
+                        <td><label for="windowsVersion">Windows Version:</label></td>
+                        <td><input type="text" id="windowsVersion" name="windowsVersion" required><br></td>
+                    </tr>   
+                    <tr>
+                        <td><label >Department:</label></td>
+                        <td><input type="text"  name="department" required><br></td>
+                    </tr>       
+                    <tr>
+                        <td><label for=>Asset Code:</label></td>
+                        <td><input type="text" id="assetCode" name="assetCode" required><br></td>
+                    </tr> 
+                    <tr>
+                        <td><label >Employee ID :</label></td>
+                        <td><input type="text" name="emp_id" required><br></td>
+                    </tr> 
+                    <tr>
+                        <td> <button type="submit">Submit</button></td>
+                    </tr>                                    
+
+               
+            </form>
+            </div>
+
+            <tr><td><div class="preview-container">
+            <h2>Preview</h2>
+            <div class="preview-data" id="previewData">
+                <!-- Preview data will be shown here -->
+            </div>
+            </div>
+        </td>
+        </tr>
+            </tr>
+        </table>
+        
+
+    <script>
+        // Access the form and preview container elements
+        const form = document.getElementById('dataForm');
+        const preview = document.getElementById('previewData');
+
+        // Event listener for form submission
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Get form values
+            const name = form.elements.name.value;
+            const email = form.elements.email.value;
+            const phone = form.elements.phone.value;
+
+            // Update the preview container with entered data
+            preview.innerHTML = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+            `;
+
+            // Reset the form after submitting
+            form.reset();
+        });
+    </script>
+</body>
+</html>
